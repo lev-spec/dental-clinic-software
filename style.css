@@ -1,0 +1,280 @@
+:root {
+    --primary: #4f46e5;
+    --secondary: #8b5cf6;
+    --bg: #0f172a;
+    --text-main: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira GO', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+.main-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Orbs */
+.orb {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    z-index: 0;
+}
+.orb-blue { background: var(--primary); top: -100px; left: -100px; }
+.orb-purple { background: var(--secondary); bottom: -100px; right: -100px; }
+
+/* Glass Card */
+.glass-box {
+    position: relative;
+    z-index: 10;
+    width: 440px;
+    background: var(--glass);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 60px 45px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.main-logo {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 0 25px rgba(79, 70, 229, 0.4);
+}
+
+h2 { font-weight: 700; font-size: 28px; margin-bottom: 8px; }
+p { color: #94a3b8; font-size: 14px; margin-bottom: 40px; }
+
+/* Inputs */
+.floating-input {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.floating-input input {
+    width: 100%;
+    padding: 20px 50px 10px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    color: white;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.floating-input label {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.floating-input input:focus ~ label,
+.floating-input input:not(:placeholder-shown) ~ label {
+    top: 10px;
+    font-size: 12px;
+    color: var(--primary);
+}
+
+.floating-input i:not(.toggle-eye) {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #475569;
+}
+
+/* Toggle Eye */
+.toggle-eye {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #475569;
+    z-index: 100;
+    transition: 0.3s;
+}
+.toggle-eye:hover { color: var(--text-main); }
+
+.helper-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.link { color: var(--primary); text-decoration: none; }
+
+/* Button */
+.premium-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+.premium-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.footer-note { margin-top: 40px; font-size: 11px; color: #475569; letter-spacing: 1px; }
+
+/* 1. Autofill-ის პრობლემის მოგვარება */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 2. Label-ის პოზიცია, როცა ველი შევსებულია (Autofill-ის დროსაც) */
+.floating-input input:focus ~ label,
+.floating-input input:not(:placeholder-shown) ~ label,
+.floating-input input:-webkit-autofill ~ label {
+    top: 10px;
+    font-size: 12px;
+    color: var(--primary);
+}
+
+/* 3. "დამახსოვრება" და "დახმარება" სექციის გაუმჯობესება */
+.helper-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.custom-check {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.custom-check:hover { color: var(--text-main); }
+
+.custom-check input { display: none; } /* ორიგინალი ჩეკბოქსის დამალვა */
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.custom-check input:checked + .checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.custom-check input:checked + .checkmark::after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(79, 70, 229, 0.1);
+    transition: 0.3s;
+}
+
+.link:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* 1. ვაიძულებთ ბრაუზერს არ შეცვალოს ფონი და ფერები */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    /* ფონის ფერის შენარჩუნება (გამჭვირვალე ან მუქი) */
+    -webkit-box-shadow: 0 0 0px 1000px #1e293b inset !important; 
+    /* ტექსტის ფერის შენარჩუნება (თეთრი) */
+    -webkit-text-fill-color: #ffffff !important;
+    /* გარდამავალი ეფექტის გათიშვა */
+    transition: background-color 5000s ease-in-out 0s;
+    font-family: 'Fira GO', sans-serif !important;
+}
+
+/* 2. სპეციალურად Label-ისთვის, როცა Autofill აქტიურია */
+.floating-input input:-webkit-autofill ~ label {
+    top: 10px !important;
+    font-size: 12px !important;
+    color: var(--primary) !important;
+    opacity: 1 !important;
+}
+
+/* 3. ინპუტის სტილის გამყარება */
+.floating-input input {
+    width: 100%;
+    padding: 20px 50px 10px 50px;
+    background: rgba(255, 255, 255, 0.05) !important; /* აიძულე მუქი ფონი */
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    color: white !important;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}

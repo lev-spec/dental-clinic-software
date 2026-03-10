@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Shiukashvili Clinic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-heart-pulse"></i>
+                <span>Medical Portal</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fas fa-columns"></i> მთავარი</a>
+                <a href="#"><i class="fas fa-user-injured"></i> პაციენტები</a>
+                <a href="#"><i class="fas fa-calendar-check"></i> ჩანაწერები</a>
+                <a href="#"><i class="fas fa-file-medical"></i> რეცეპტები</a>
+                <a href="#"><i class="fas fa-chart-line"></i> ანალიტიკა</a>
+                <div class="nav-divider"></div>
+                <a href="#"><i class="fas fa-cog"></i> პარამეტრები</a>
+                <a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> გამოსვლა</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="მოძებნე პაციენტი ან ისტორია...">
+                </div>
+<div class="user-info">
+    <div class="notifications">
+        <i class="far fa-bell"></i>
+        <span class="badge">3</span>
+    </div>
+    <div class="profile-wrapper">
+        <div class="profile-pic">
+            <i class="fa-solid fa-circle-user admin-icon"></i>
+        </div>
+        <div class="user-details">
+            <span class="u-name">ლევან შიუკაშვილი</span>
+            <span class="u-role">მთავარი ადმინისტრატორი</span>
+        </div>
+        <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </div>
+</div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-data">
+                        <h3>1,284</h3>
+                        <p>ჯამური პაციენტი</p>
+                    </div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-data">
+                        <h3>42</h3>
+                        <p>დღევანდელი ვიზიტი</p>
+                    </div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-icon"><i class="fas fa-plus-square"></i></div>
+                    <div class="stat-data">
+                        <h3>12</h3>
+                        <p>ახალი ჩანაწერი</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="table-container">
+                <div class="table-header">
+                    <h2>ბოლო პაციენტები</h2>
+                    <button class="add-btn"><i class="fas fa-plus"></i> პაციენტის დამატება</button>
+                </div>
+                <table class="patient-table">
+                    <thead>
+                        <tr>
+                            <th>პაციენტი</th>
+                            <th>ID ნომერი</th>
+                            <th>დიაგნოზი</th>
+                            <th>თარიღი</th>
+                            <th>სტატუსი</th>
+                            <th>მოქმედება</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="p-name">გიორგი ბერიძე</div>
+                            </td>
+                            <td>01024058xxx</td>
+                            <td>კარიესი</td>
+                            <td>10 მარტი, 2026</td>
+                            <td><span class="status completed">დასრულებული</span></td>
+                            <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="p-name">ანი მახარაძე</div>
+                            </td>
+                            <td>54001027xxx</td>
+                            <td>იმპლანტაცია</td>
+                            <td>10 მარტი, 2026</td>
+                            <td><span class="status pending">რიგშია</span></td>
+                            <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

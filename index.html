@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ავტორიზაცია | შიუკაშვილის კლინიკა</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-screen">
+        <div class="orb orb-blue"></div>
+        <div class="orb orb-purple"></div>
+
+        <div class="glass-box">
+            <div class="brand-section">
+                <div class="main-logo">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+                <h2>კლინიკის პორტალი</h2>
+                <p>ლ. შიუკაშვილის სტომატოლოგიური კლინიკა</p>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="floating-input">
+                    <input type="text" id="user" placeholder=" " required>
+                    <label for="user">მომხმარებლის სახელი</label>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+
+                <div class="floating-input">
+                    <input type="password" id="pass" placeholder=" " required>
+                    <label for="pass">პაროლი</label>
+                    <i class="fas fa-shield-halved"></i>
+                    <i class="fas fa-eye-slash toggle-eye" id="togglePass"></i>
+                </div>
+
+                <div class="helper-row">
+                    <label class="custom-check">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        დამახსოვრება
+                    </label>
+                    <a href="#" class="link">დახმარება</a>
+                </div>
+
+                <a href="dashboard.html" class="premium-btn">
+                    <span>შესვლა სისტემაში</span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+
+            <div class="footer-note">
+                <span>&copy; 2026 შიუკაშვილის სამედიცინო ცენტრი</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
